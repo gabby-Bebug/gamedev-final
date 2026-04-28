@@ -79,6 +79,12 @@ public class PlayerScript : MonoBehaviour
             vel.y = JumpPower;
           
         }
+        //If I fall into the void...
+        if (transform.position.y < -20)
+        {
+            //Give me a game over
+            SceneManager.LoadScene("Game Over");
+        }
 
         //Here I actually feed the Rigidbody the movement I want
         RB.linearVelocity = vel;
