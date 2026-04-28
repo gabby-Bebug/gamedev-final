@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -19,7 +20,13 @@ public class PlayerScript : MonoBehaviour
     public ParticleSystem PS;
     public AudioSource AS;
     public GameObject GO;
+    public TextMeshPro ScoreText;
+    public TextMeshPro HealthText;
 
+    //score
+    public int Score = 0;
+    //health
+    public int Health = 4;
     //My personal stats
     public float Speed = 5;
     public float JumpPower = 10;
@@ -95,6 +102,8 @@ public class PlayerScript : MonoBehaviour
 
         
     }
+
+
 
     private void OnCollisionExit2D(Collision2D other)
     {
