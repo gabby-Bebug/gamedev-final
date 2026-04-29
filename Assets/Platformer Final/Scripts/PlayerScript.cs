@@ -118,7 +118,7 @@ public class PlayerScript : MonoBehaviour
                              
             }
         }
-        if (other.gameObject.CompareTag("Coins"))
+        if (other.gameObject.CompareTag("Coin"))
         {
             //collect and update score
             Score++;
