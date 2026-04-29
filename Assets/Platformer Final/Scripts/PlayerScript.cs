@@ -123,6 +123,10 @@ public class PlayerScript : MonoBehaviour
             //collect and update score
             Score++;
             ScoreText.text = "Score:" + Score;
+            if (Score >= 10) 
+            { 
+                Win();
+            }
         }
 
     }
@@ -134,6 +138,10 @@ public class PlayerScript : MonoBehaviour
         //If I stop touching something solid, mark me as not being on the ground
         OnGround = false;
         Touching.Remove(other.gameObject);
+    }
+    public void Win()
+    {
+        SceneManager.LoadScene("You Win");
     }
     public void Die()
     {
