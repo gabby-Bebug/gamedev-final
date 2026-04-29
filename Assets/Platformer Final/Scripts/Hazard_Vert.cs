@@ -18,7 +18,7 @@ public class Hazard_Vertical : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    //If move, character moves to the right automatically 
+    //this hazard moves up constantly
     {
         if (Move)
         {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Hazard_Horiz : MonoBehaviour
+public class Hazard_Horizontal : MonoBehaviour
 {
     public Transform T;
     //Rigidbody is for movement!

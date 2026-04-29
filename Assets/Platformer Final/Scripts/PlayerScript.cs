@@ -118,7 +118,12 @@ public class PlayerScript : MonoBehaviour
                              
             }
         }
-
+        if (other.gameObject.CompareTag("Coins"))
+        {
+            //collect and update score
+            Score++;
+            ScoreText.text = "Score:" + Score;
+        }
 
     }
 
