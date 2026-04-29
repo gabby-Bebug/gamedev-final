@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Hazard_Horiz : MonoBehaviour
+public class WrapGame : MonoBehaviour
 {
     public Transform T;
     //Rigidbody is for movement!
@@ -22,26 +22,26 @@ public class Hazard_Horiz : MonoBehaviour
     {
         if (Move)
         {
-            transform.position += new Vector3(3 * Time.deltaTime, 0, 0);
+            transform.position += new Vector3(0, 3 * Time.deltaTime, 0);
         }
         //If i move to the right end of the screen, i need to pop up on the start of the left side of the screen
-        if (transform.position.x > 10)
+        if (transform.position.y > 10)
         {
             //Remember Vector3 Shuffle
-            transform.position = new Vector3(-10, 0, 0);
-            transform.position += new Vector3(-10.1f, 0, 0);
+            transform.position = new Vector3(0, -10, 0);
+            transform.position += new Vector3(0, -10.1f, 0);
             Vector3 pos = transform.position;
-            pos.x = -10;
+            pos.y = -10;
             transform.position = pos;
         }
         //if i move to the left end of the screen, i pop up on the right side of the screen
-        if (transform.position.x < -10)
+        if (transform.position.y < -10)
         {
             //Remember Vector3 Shuffle
-            transform.position = new Vector3(10, 0, 0);
-            transform.position += new Vector3(10.1f, 0, 0);
+            transform.position = new Vector3(0, 10, 0);
+            transform.position += new Vector3(0, 10.1f, 0);
             Vector3 pos = transform.position;
-            pos.x = 10;
+            pos.y = 10;
             transform.position = pos;
         }
     }
