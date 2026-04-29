@@ -130,7 +130,10 @@ public class PlayerScript : MonoBehaviour
         }
 
     }
-
+    private void OnTriggerEnter(Collider2D other)
+    {
+        
+    }
 
 
     private void OnCollisionExit2D(Collision2D other)
