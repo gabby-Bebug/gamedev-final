@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class WrapGame : MonoBehaviour
+public class Hazard_Vertical : MonoBehaviour
 {
     public Transform T;
     //Rigidbody is for movement!
