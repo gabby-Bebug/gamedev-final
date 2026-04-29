@@ -112,7 +112,7 @@ public class PlayerScript : MonoBehaviour
             Health--;
             HealthText.text = "Health:" + Health;
             //if i hit zero hp
-            if (Health > 0) 
+            if (Health <= 0) 
             { //run the game over
                 Die();
                              
