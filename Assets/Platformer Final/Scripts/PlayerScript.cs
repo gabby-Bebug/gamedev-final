@@ -82,8 +82,7 @@ public class PlayerScript : MonoBehaviour
         //If I fall into the void...
         if (transform.position.y < -20)
         {
-            //Give me a game over
-            SceneManager.LoadScene("Game Over");
+            Die();
         }
 
         //Here I actually feed the Rigidbody the movement I want
@@ -93,7 +92,7 @@ public class PlayerScript : MonoBehaviour
 
     }
 
-    //jump tracking (currently not working right)
+    //jump tracking
     public bool CanJump()
     {
         return Touching.Count > 0;
@@ -106,7 +105,21 @@ public class PlayerScript : MonoBehaviour
         if (!Touching.Contains(other.gameObject))
             Touching.Add(other.gameObject);
 
-        
+        //if i touch hazards
+        if (other.gameObject.CompareTag("Hazard"))
+        {
+            //takes away health
+            Health--;
+            HealthText.text = "Health:" + Health;
+            //if i hit zero hp
+            if (Health > 0) 
+            { //run the game over
+                Die();
+                             
+            }
+        }
+
+
     }
 
 
@@ -117,4 +130,9 @@ public class PlayerScript : MonoBehaviour
         OnGround = false;
         Touching.Remove(other.gameObject);
     }
+    public void Die()
+    {
+        SceneManager.LoadScene("Game Over");
+    }
+
 }
