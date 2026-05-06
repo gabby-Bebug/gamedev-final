@@ -121,18 +121,22 @@ public class PlayerScript : MonoBehaviour
         
 
     }
-    private void OnTriggerEnter(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Coin"))
-        {
-            //collect and update score
+        coinscript es = other.gameObject.GetComponent<coinscript>();
+        if (es != null)
+        {//collect and update score
             Score++;
             ScoreText.text = "Score:" + Score;
             if (Score >= 10)
             {
                 Win();
             }
+            Debug.Log("hihi");
+            es.Bumped();
         }
+      
+      
     }
 
 
@@ -150,5 +154,5 @@ public class PlayerScript : MonoBehaviour
     {
         SceneManager.LoadScene("Game Over");
     }
-
+    
 }
