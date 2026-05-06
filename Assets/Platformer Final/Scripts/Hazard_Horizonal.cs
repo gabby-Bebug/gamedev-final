@@ -32,6 +32,7 @@ public class Hazard_Horizontal : MonoBehaviour
             transform.position += new Vector3(-10.1f, 0, 0);
             Vector3 pos = transform.position;
             pos.x = -10;
+            pos.y = Random.Range(-4, 4f);
             transform.position = pos;
         }
         //if i move to the left end of the screen, i pop up on the right side of the screen
