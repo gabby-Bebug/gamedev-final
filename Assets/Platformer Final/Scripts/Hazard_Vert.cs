@@ -22,7 +22,7 @@ public class Hazard_Vertical : MonoBehaviour
     {
         if (Move)
         {
-            transform.position += new Vector3(0, 3 * Time.deltaTime, 0);
+            transform.position += new Vector3(0, 4 * Time.deltaTime, 0);
         }
         //If i move to the right end of the screen, i need to pop up on the start of the left side of the screen
         if (transform.position.y > 10)
@@ -31,6 +31,7 @@ public class Hazard_Vertical : MonoBehaviour
             transform.position = new Vector3(0, -10, 0);
             transform.position += new Vector3(0, -10.1f, 0);
             Vector3 pos = transform.position;
+            pos.x = Random.Range(-7, 7f);
             pos.y = -10;
             transform.position = pos;
         }
