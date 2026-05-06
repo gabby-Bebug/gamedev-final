@@ -118,21 +118,21 @@ public class PlayerScript : MonoBehaviour
                              
             }
         }
+        
+
+    }
+    private void OnTriggerEnter(Collider2D other)
+    {
         if (other.gameObject.CompareTag("Coin"))
         {
             //collect and update score
             Score++;
             ScoreText.text = "Score:" + Score;
-            if (Score >= 10) 
-            { 
+            if (Score >= 10)
+            {
                 Win();
             }
         }
-
-    }
-    private void OnTriggerEnter(Collider2D other)
-    {
-        
     }
 
 
