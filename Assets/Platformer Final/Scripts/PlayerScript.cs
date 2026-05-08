@@ -19,7 +19,6 @@ public class PlayerScript : MonoBehaviour
     public Collider2D Coll;
     public ParticleSystem PS;
     public AudioSource AS;
-    public AudioClip DeathSound;
     public GameObject GO;
     public TextMeshPro ScoreText;
     public TextMeshPro HealthText;
@@ -36,10 +35,10 @@ public class PlayerScript : MonoBehaviour
     //Variables I use to track my state
     public List<GameObject> Touching;
     public bool OnGround = false;
-    
+
 
     //My Sound Effects
-    public AudioClip JumpSFX;
+    public AudioClip JumpSound;
 
     //List Stuff
 
@@ -78,6 +77,8 @@ public class PlayerScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && CanJump())
         {
             vel.y = JumpPower;
+            //play jump noise
+            AS.PlayOneShot(JumpSound);
           
         }
         //If I fall into the void...
@@ -110,15 +111,11 @@ public class PlayerScript : MonoBehaviour
         //if i touch hazards
         if (other.gameObject.CompareTag("Hazard"))
         {
-            //takes away health
-            Health--;
-            HealthText.text = "Health:" + Health;
-            //if i hit zero hp
-            if (Health <= 0) 
-            { //run the game over
-                Die();
-                             
-            }
+            //reduces the score
+            //this makes things a little more competitve, makes a player want to rush, rush too much and youll fall right off
+            Score--;
+            ScoreText.text = "Score:" + Score;
+            
         }
         
 

@@ -2365,8 +2365,8 @@ MonoBehaviour:
   RB: {fileID: 1174706272}
   Coll: {fileID: 1174706271}
   PS: {fileID: 0}
-  AS: {fileID: 0}
-  DeathSound: {fileID: 0}
+  AS: {fileID: 1174706274}
+  JumpSound: {fileID: 8300000, guid: 975e2d325db83244cb2e27c8561f84a0, type: 3}
   GO: {fileID: 0}
   ScoreText: {fileID: 1876777518}
   HealthText: {fileID: 572484969}
@@ -2386,13 +2386,13 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1174706268}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 975e2d325db83244cb2e27c8561f84a0, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
