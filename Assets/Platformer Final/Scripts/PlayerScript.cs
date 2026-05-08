@@ -84,7 +84,7 @@ public class PlayerScript : MonoBehaviour
         if (transform.position.y < -20)
         {
             Die();
-            AS.PlayOneShot(DeathSound);
+            
         }
 
         //Here I actually feed the Rigidbody the movement I want
@@ -155,6 +155,7 @@ public class PlayerScript : MonoBehaviour
     public void Die()
     {
         SceneManager.LoadScene("Game Over");
+        
     }
     
 }
