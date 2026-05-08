@@ -21,12 +21,11 @@ public class PlayerScript : MonoBehaviour
     public AudioSource AS;
     public GameObject GO;
     public TextMeshPro ScoreText;
-    public TextMeshPro HealthText;
+    
 
     //score
     public int Score = 0;
-    //health
-    public int Health = 4;
+    
     //My personal stats
     public float Speed = 5;
     public float JumpPower = 10;
