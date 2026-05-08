@@ -39,6 +39,10 @@ public class PlayerScript : MonoBehaviour
     //My Sound Effects
     public AudioClip JumpSound;
 
+    //my sprites
+    public SpriteRenderer Pacleft;
+    public SpriteRenderer Pacright;
+
     //List Stuff
 
     public List<SpriteRenderer> SRs;
@@ -114,7 +118,7 @@ public class PlayerScript : MonoBehaviour
             //this makes things a little more competitve, makes a player want to rush, rush too much and youll fall right off
             Score--;
             ScoreText.text = "Score:" + Score;
-            
+            Debug.Log("gimmethat");
         }
         
 
@@ -130,7 +134,7 @@ public class PlayerScript : MonoBehaviour
             {
                 Win();
             }
-            Debug.Log("hihi");
+            Debug.Log("hungry");
             es.Bumped();
         }
       
