@@ -19,6 +19,7 @@ public class PlayerScript : MonoBehaviour
     public Collider2D Coll;
     public ParticleSystem PS;
     public AudioSource AS;
+    public AudioClip DeathSound;
     public GameObject GO;
     public TextMeshPro ScoreText;
     public TextMeshPro HealthText;
@@ -83,6 +84,7 @@ public class PlayerScript : MonoBehaviour
         if (transform.position.y < -20)
         {
             Die();
+            AS.PlayOneShot(DeathSound);
         }
 
         //Here I actually feed the Rigidbody the movement I want
